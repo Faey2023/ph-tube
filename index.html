@@ -39,16 +39,16 @@
   <body id="inter" class="container mx-auto bg-colWhite">
     <header>
       <!-- nav bar for larger device  -->
-      <nav class="justify-around my-12 flex flex-col md:flex-row">
+      <nav class="justify-around my-12 flex flex-col space-y-2 md:flex-row">
         <img class="max-w-[200px]" src="images/Logo.png" alt="" />
         <button
           onclick="viewSorter()"
-          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-btnBlack text-xl font-medium"
+          class="btn p-2 text-btnBlack text-xl font-medium"
         >
           Sort by view
         </button>
         <button
-          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-colRed hover:bg-red-500 text-colWhite text-xl font-medium"
+          class="btn p-2 bg-colRed hover:bg-red-500 text-colWhite text-xl font-medium"
         >
           <a href="blog.html">Blog</a>
         </button>
@@ -58,13 +58,13 @@
       <hr class="bg-[#17171733] mb-5" />
       <div
         id="tab-container"
-        class="flex text-center justify-center gap-6 mb-10"
+        class="flex flex-wrap text-center justify-center gap-6 mb-10"
       ></div>
     </header>
     <main>
       <div
         id="main-content"
-        class="gap-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       ></div>
       <!-- error content  -->
       <div id="err-content" class="container mx-auto hidden">

@@ -11,7 +11,7 @@ const loadData = async () => {
     const tabDiv = document.createElement("div");
     tabDiv.innerHTML = `
     <button
-          class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-colGrey text-btnGrey text-xl font-medium"
+          class="btn p-2 bg-colGrey text-btnGrey text-xl font-medium"
         >
           <a class="tab text-center" onclick="loadVideos('${tab.category_id}')">${tab.category}</a>
     `;
@@ -49,10 +49,11 @@ const dataVisualization = (videos) => {
     const time = ` ${hour}hours ${ultimateMinute}minutes ago.`;
     console.log(time);
     const videoDiv = document.createElement("div");
+    videoDiv.classList = `card card-compact h-[310px] max-w-[310px] mx-auto`;
     videoDiv.innerHTML = `
     <div class="relative flex flex-col">
   <img class="w-[312px] h-[200px] mb-5" src="${video?.thumbnail}" alt="" />
-  <p class="bg-black text-white text-[10px] font-normal max-w-full absolute lg:mt-40 ml-52">${time}</p>
+  <p class="bg-black text-white text-[10px] font-normal max-w-full absolute mt-40 ml-52">${time}</p>
 </div>
 <div class="flex justify-items-start gap-3">
   <img class="rounded-full max-w-[40px] max-h-[40px]" src="${
