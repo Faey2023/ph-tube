@@ -18,12 +18,19 @@ const loadData = async () => {
     tabContainer.appendChild(tabDiv);
   });
 };
+let all;
 const loadVideos = async (categoryId) => {
+  all = categoryId;
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await res.json();
   const videos = data.data;
+  dataVisualization(videos);
+};
+//data
+
+const dataVisualization = (videos) => {
   const mainContent = document.getElementById("main-content");
   mainContent.innerHTML = "";
   if (videos?.length != 0) {
@@ -45,7 +52,7 @@ const loadVideos = async (categoryId) => {
     videoDiv.innerHTML = `
     <div class="relative flex flex-col">
   <img class="w-[312px] h-[200px] mb-5" src="${video?.thumbnail}" alt="" />
-  <p class="bg-black text-white text-[10px] font-normal max-w-full absolute mt-40 ml-52">${time}</p>
+  <p class="bg-black text-white text-[10px] font-normal max-w-full absolute lg:mt-40 ml-52">${time}</p>
 </div>
 <div class="flex justify-items-start gap-3">
   <img class="rounded-full max-w-[40px] max-h-[40px]" src="${
@@ -69,7 +76,23 @@ const loadVideos = async (categoryId) => {
     mainContent.appendChild(videoDiv);
   });
 };
+//sorting the data
+const viewSorter = async () => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/videos/category/${all}`
+  );
+  const data = await res.json();
+  const videos = data.data;
+  const sortData = data.data.sort((a, b) => {
+    let num1 = a.others.views.slice(0, -1);
+    let num2 = b.others?.views.slice(0, -1);
+    console.log(num1, num2);
+    return num2 - num1;
+  });
+  dataVisualization(sortData);
+};
+//
 loadData();
-loadVideos("1001");
+loadVideos("1000");
 
 // main content starts here
