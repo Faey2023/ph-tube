@@ -7,18 +7,52 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="container ml-10 mt-10">
-    <h1 class="text-center text-4xl font-extrabold mb-5">Questions and Answers</h1>
+    <h1 class="text-center text-4xl font-extrabold mb-5">
+      Questions and Answers
+    </h1>
     <ol class="list-decimal">
       <li class="text-3xl font-bold">
         Discuss the scope of var, let, and const.
       </li>
-      <p class="font-semibold text-2xl text-gray-500">Ans: Const and let is block scoped whereas var is a functional scoped. </p>
+      <p class="font-semibold text-2xl text-gray-500">
+        Ans: Const and let is block scoped whereas var is global/functional
+        scoped. Global scope means the variables declared outside the function
+        can be accessed anywhere globally. Block scope means the variables can;t
+        be accessed anywhere outside the particular block.
+      </p>
       <li class="text-3xl font-bold">
         Tell us the use cases of null and undefined.
       </li>
-      <p class="font-semibold text-2xl text-gray-500">Ans: Cases of null and undefined are stated below.</p>
+      <div class="font-semibold text-2xl text-gray-500">
+        Ans: Null is a primitive data type in JavaScript. Null means a variable
+        that is assigned but has no value. <br />
+        <span class="text-red-600 bg-blue-400 font-semibold"
+          >Ex: var x = null;</span
+        >
+        <br />
+        Undefined means the variable has been declared but it's value is not
+        assigned. <br />
+        <span class="text-red-600 bg-blue-400 font-semibold">Ex: var x;</span>
+        <br />
+        Cases of undefined are stated below.
+        <ul class="list-disc">
+          <li>variable that is not initialized.</li>
+          <li>parameters that is not passed.</li>
+          <li>condition.</li>
+          <li>function with no return.</li>
+          <li>property that doesn't exists in an object.</li>
+          <li>accessing array elements outside of the index range.</li>
+          <li>deleting an element inside an array.</li>
+          <li>set a value directly to undefined.</li>
+        </ul>
+      </div>
       <li class="text-3xl font-bold">What do you mean by REST API?</li>
-      <p class="font-semibold text-2xl text-gray-500">Ans:</p>
+      <p class="font-semibold text-2xl text-gray-500">
+        Ans: API stands for Application Programming Interface and REST stands
+        for Representational State Transfer. A REST API is a process that uses
+        HTTPS to access and use data. That data can be used to CRUDE data types,
+        which refers to Create Read Update Delete.
+      </p>
     </ol>
   </body>
 </html>
